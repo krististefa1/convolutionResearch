@@ -2,11 +2,11 @@ close all; clear all; clc;
 
 % We open an image file, convert it to grayscale and generate a binary file
 
-IM = rgb2gray(imread('dolphin.jpg')); % droid.png: 500x500 image
+IM = rgb2gray(imread('droid.png')); % droid.png: 500x500 image
 % IM range: [0 to 255]
 
 % Generating binary files for hardware processing
-  filename_out = strcat('dolphin.bif');
+  filename_out = strcat('droid.bif');
   [n, m] = size (IM); % n: # of rows, m: # of columns
 
 % Data is reordered linearly in a raster scan fashion  
@@ -24,8 +24,8 @@ IM = rgb2gray(imread('dolphin.jpg')); % droid.png: 500x500 image
   figure; imshow (IM); % Input image
   
 % Reading output binary file:
-  fad = fopen ('dolphin.bof','r');
+  fad = fopen ('droid.bof','r');
   odata = fread (fad, n*m, 'uint8=>uint8');
   fclose (fad);
-  oimg = reshape(odata, n, m); % data is taken colum-wise, but we wanted it row-wise, then oimg'
+  oimg = reshape(odata, m, n); % data is taken colum-wise, but we wanted it row-wise, then oimg'
   figure; imshow(oimg');

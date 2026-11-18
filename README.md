@@ -1,18 +1,26 @@
 # Convolution Research
-- Storage repo for research code and data (currently Summer 2026)
+- Storage repo for research code and data (currently Fall)
 
 ## Projects
 ### HDL Research
 - Files comprising HDL AXI-Full Kernel as given in [[Tutorial - Unit 4.pdf]]
 - Source files are VHDL files and Zynq application code 
 
-### HLS Research
+### HLS Research (1-Kernel)
 - Current work on convolution using the Zynq and HLS 
 - Aspects improved/changed from the sample:
 	- Use of MAX sizes to allow semi-dynamic processor app code 
 	- No border loss on the output 
 	- Rework of const defines to allow dynamic code
 - Allows for different images based on a set of defines
+
+### HLS Research (2-Kernel)
+- Recreation of Sobel filter from prior research
+- Aspects improved/changed from the sample:
+	- No bitmap/image transformations in the HLS application
+	- Requirement to set the size of tested image 
+	- Interface to define any 2 K-sized kernels 
+- Above 1-Kernel features 
 
 ### Sample Optimized 
 - Sample HLS code, notebook, and image provided by Xilinx
